@@ -17,6 +17,7 @@ colorama.init()
 def info():
   Fore.RESET
   system('clear')
+  banner()
   print("1) Check mail")
   print("2) Verify phone number")
   print("3) Generate passwords")
@@ -90,6 +91,7 @@ def info():
    info()
 def spam():
  system('clear')
+ banner()
  print("Start spamming to:")
  print("1) Mobile phone number")
  print("2) Email")
@@ -120,6 +122,7 @@ def spam():
   spam()
 def brute():
  system('clear')
+ banner()
  print("1) Facebook account")
  print("2) Instagram account")
  print("3) Back")
@@ -133,17 +136,29 @@ def brute():
   start()
  else:
   brute()
+def banner():
+ print(Fore.RED+"                 ▄▄  ▄▄▄▄▄▄▄▄                                ▄▄        ▄▄")
+ print("      ██        ██   ▀▀▀▀▀███                        ██       █▄        █▄")
+ print("     ██        ██        ██▀    ▄████▄    ██▄████  ███████     █▄        █▄")
+ print("    ██        ██       ▄██▀    ██▄▄▄▄██   ██▀        ██         █▄        █▄")
+ print("   ▄█▀       ▄█▀      ▄██      ██▀▀▀▀▀▀   ██         ██          █▄        █")
+ print("  ▄█▀       ▄█▀      ███▄▄▄▄▄  ▀██▄▄▄▄█   ██         ██▄▄▄        █▄        █▄")
+ print(" ▄█▀       ▄█▀       ▀▀▀▀▀▀▀▀    ▀▀▀▀▀    ▀▀          ▀▀▀▀         █▄        █▄"+Fore.RESET)
 def start():
- system('clear')
- print("1) Information gathering")
- print("2) Spamming")
- print("3) Cracking social accounts")
- ask=input("<SOCIAL>")
- if ask == "1":
-  info()
- if ask == "2":
-  spam()
- if ask == "3":
-  brute() 
+ try:
+  system('clear')
+  banner()
+  print("1) Information gathering")
+  print("2) Spamming")
+  print("3) Cracking social accounts")
+  ask=input("<SOCIAL>")
+  if ask == "1":
+   info()
+  if ask == "2":
+   spam()
+  if ask == "3":
+   brute()
+ except:
+  print("\nGoodbye...")  
 if __name__ == '__main__':
  start()
